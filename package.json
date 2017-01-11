@@ -1,0 +1,14 @@
+{
+  "name": "http-tunneling-proxy",
+  "version": "0.1.0",
+  "description": "fairly simple http tunneling proxy",
+  "main": "index.js",
+  "author": "Jan Kaßel <58153@outlook.com>",
+  "license": "MIT",
+  "bin": {
+    "http-tunneling-proxy": "bin/proxy.js"
+  },
+  "dependencies": {
+    "optimist": "^0.6.1"
+  }
+}
