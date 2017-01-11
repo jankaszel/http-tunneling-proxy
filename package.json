@@ -1,12 +1,19 @@
 {
   "name": "http-tunneling-proxy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "fairly simple http tunneling proxy",
   "main": "index.js",
   "author": "Jan Kaßel <58153@outlook.com>",
   "license": "MIT",
   "bin": {
     "http-tunneling-proxy": "bin/proxy.js"
+  },
+  "engines": {
+    "node": ">=6.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fallafeljan/http-tunneling-proxy.git"
   },
   "dependencies": {
     "optimist": "^0.6.1"
