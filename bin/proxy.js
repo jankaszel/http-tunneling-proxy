@@ -1,13 +1,24 @@
 #!/usr/bin/env node
 const createProxyServer = require('../');
-const {argv} = require('optimist');
+const minimist = require('minimist');
+
+const args = minimist(process.argv.slice(2), {
+  string: 'lang',
+  boolean: 'pager',
+  alias: {
+    p: 'port',
+    h: 'host'
+  },
+  default: { lang: 'en' },
+  '--': true
+});
 
 const proxyServer = createProxyServer(req => {
   console.log(`${req.method} ${req.url}`);
 });
 
-const port = argv.port || 3030,
-  host = argv.host || '127.0.0.1';
+const port = args.port || 3030,
+  host = args.host || '127.0.0.1';
 
 proxyServer.listen(port, host, err => {
   if (err) {
