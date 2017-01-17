@@ -28,4 +28,6 @@ const createProxyServer = require('http-tunneling-proxy');
 const proxyServer = createProxyServer(req => {
   console.log(`${req.method} ${req.url}`);
 });
+
+proxyServer.listen(3030);
 ```
