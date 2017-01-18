@@ -1,6 +1,7 @@
 # http-tunneling-proxy
 
 [![npm](https://img.shields.io/npm/v/http-tunneling-proxy.svg)](https://www.npmjs.com/package/http-tunneling-proxy)
+[![Travis](https://travis-ci.org/fallafeljan/http-tunneling-proxy.svg)]()
 
 This is a simple, minimally modifiable HTTP tunneling proxy written in Node.js. It is based on a snippet available in the
 [Node.js docs](https://nodejs.org/api/http.html#http_event_connect). The module 
