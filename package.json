@@ -1,6 +1,6 @@
 {
   "name": "http-tunneling-proxy",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "fairly simple http tunneling proxy",
   "main": "index.js",
   "author": "Jan Kaßel <58153@outlook.com>",
@@ -24,9 +24,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fallafeljan/http-tunneling-proxy.git"
-  },
-  "dependencies": {
-    "minimist": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^3.14.0",
