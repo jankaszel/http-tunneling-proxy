@@ -35,7 +35,7 @@ describe('createProxyServer()', () => {
     });
 
     const proxyPromise = new Promise(resolve => {
-      proxyServer = createProxyServer((req) => {
+      proxyServer = createProxyServer(() => {
         proxyCalled = true;
       });
 
