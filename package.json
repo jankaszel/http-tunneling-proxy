@@ -1,6 +1,6 @@
 {
   "name": "http-tunneling-proxy",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "fairly simple http tunneling proxy",
   "main": "index.js",
   "author": "Jan Kaßel <58153@outlook.com>",

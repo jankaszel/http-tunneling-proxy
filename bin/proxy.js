@@ -56,7 +56,6 @@ const proxyServer = createProxyServer(req => {
   console.log(`${req.method} ${req.url}`);
 });
 
-console.log(args)
 const {host, port} = args;
 proxyServer.listen(port, host, err => {
   if (err) {
