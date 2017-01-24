@@ -31,11 +31,6 @@ function createProxyServer(callback = () => {}) {
       srvSocket.write(head);
       srvSocket.pipe(cltSocket);
       cltSocket.pipe(srvSocket);
-
-      srvSocket.on('error', err => {
-        // eslint-disable-next-line no-console
-        console.error(`Remote connection error: ${err.message}`);
-      });
     });
   });
 
