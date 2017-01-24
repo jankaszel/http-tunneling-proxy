@@ -13,7 +13,7 @@ function createProxyServer(callback = () => {}) {
     res.end('OK');
   });
 
-  proxyServer.on('connect', (req, cltSocket, head) => {
+  proxyServer.on('connect', (req, clientSocket, head) => {
     callback(req);
 
     const {
@@ -21,16 +21,16 @@ function createProxyServer(callback = () => {}) {
       hostname
     } = url.parse(`http://${req.url}`);
 
-    var srvSocket = net.connect(port, hostname, () => {
-      cltSocket.write(
+    var serverSocket = net.connect(port, hostname, () => {
+      clientSocket.write(
         'HTTP/1.1 200 Connection Established\r\n' +
         'Proxy-agent: Node.js-Proxy\r\n' +
         '\r\n'
       );
 
-      srvSocket.write(head);
-      srvSocket.pipe(cltSocket);
-      cltSocket.pipe(srvSocket);
+      serverSocket.write(head);
+      serverSocket.pipe(clientSocket);
+      clientSocket.pipe(serverSocket);
     });
   });
 
