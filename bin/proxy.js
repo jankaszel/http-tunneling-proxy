@@ -25,7 +25,7 @@ try {
       }
     } else if (argv[i] === 'h' || argv[i] === '--host') {
       const j = ++i;
-      const host = parseInt(argv[j]);
+      const host = argv[j];
 
       if (argv.length <= j) {
         throw new Error();
