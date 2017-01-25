@@ -3,43 +3,31 @@
 /* eslint-disable no-console */
 const {basename} = require('path');
 const createProxyServer = require('../');
+const parseOptions = require('argv-options');
 const {version} = require('../package.json');
 
-let args = {
-  port: 3030,
-  host: '127.0.0.1'
-};
+let args
 
 try {
-  const argv = process.argv.slice(2);
+  const parsedArgs = parseOptions(process.argv.slice(2), {
+    p: {
+      alias: 'port',
+      optional: true
+    },
 
-  for (let i = 0; i < argv.length; i++) {
-    if (argv[i] === '-p' || argv[i] === '--port') {
-      const j = ++i;
-      const port = parseInt(argv[j]);
-
-      if (argv.length <= j || !Number.isInteger(port)) {
-        throw new Error();
-      } else {
-        args.port = port;
-      }
-    } else if (argv[i] === 'h' || argv[i] === '--host') {
-      const j = ++i;
-      const host = argv[j];
-
-      if (argv.length <= j) {
-        throw new Error();
-      } else {
-        args.host = host;
-      }
-    } else {
-      throw new Error();
+    h: {
+      alias: 'host',
+      optional: true
     }
-  }
+  });
+
+  args = Object.assign({
+    port: 3030,
+    host: '127.0.0.1'
+  }, parsedArgs);
 }
 catch (err) {
   const cmd = basename(process.argv[1]);
-  
   console.log(`Usage: ${cmd} [options]
 
 Options:
